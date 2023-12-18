@@ -1,4 +1,4 @@
-# 연금복권1
+# 연금복권
 import random
 
 lotto_number = []
