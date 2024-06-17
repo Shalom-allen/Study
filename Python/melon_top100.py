@@ -40,15 +40,25 @@ conn = mydb.connect(
 cursor = conn.cursor()
 
 # 실행할 때마다 다른값이 나오지 않게 테이블을 제거해두기
-cursor.execute("TRUNCATE TABLE melon")
+cursor.execute("TRUNCATE TABLE TBL_MELON_CHART")
 
-# 테이블 생성하기
-#cursor.execute("CREATE TABLE melon (`rank` int, title text, url text)")
-i = 1
+# 테이블 생성
+'''
+CREATE or replace TABLE `TBL_MELON_CHART` (
+  `rank` int(11) NOT NULL,
+  `title` varchar(100) DEFAULT NULL,
+  `artist` varchar(100) DEFAULT NULL,
+  `insert_date` datetime DEFAULT sysdate(),
+  PRIMARY KEY (`rank`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+'''
+
 # 데이터 저장하기
+i = 1
+
 for item in items:
     cursor.execute(
-        f"INSERT INTO melon VALUES({i},\"{item[0]}\",\"{item[1]}\")")
+        f"INSERT INTO TBL_MELON_CHART(rank, title, artist) VALUES({i},\"{item[0]}\",\"{item[1]}\")")
     i += 1
 
 # 커밋하기
