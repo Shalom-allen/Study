@@ -8,7 +8,7 @@ from datetime import datetime
 DB_CONFIG = {
     'host': 'localhost',
     'dbname': 'study',
-    'user': 'postgres',
+    'user': 'inserter',
     'password': '123qwe!!!',
     'port': 5432
 }
