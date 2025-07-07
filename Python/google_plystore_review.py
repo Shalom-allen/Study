@@ -3,7 +3,7 @@ from google_play_scraper import Sort, reviews
 
 total_reviews = []
 count_per_request = 100  # 한 번에 가져올 리뷰 수
-target_count = 500  # 목표 리뷰 수500  600부터 호출이 잘안되넹...
+target_count = 500  # 목표 리뷰 수500
 
 result, continuation_token = reviews(
     'com.laundrygo.android', #요기에 가지고오고싶은 어플의 주소와
