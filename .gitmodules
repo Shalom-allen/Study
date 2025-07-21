@@ -1,0 +1,3 @@
+[submodule "allen_store"]
+	path = allen_store
+	url = https://github.com/Shalom-allen/allen_store.git
